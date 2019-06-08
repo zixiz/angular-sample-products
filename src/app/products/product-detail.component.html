@@ -2,8 +2,45 @@
   <div class="car-header">
     {{pageTitle + ': '+productd.productId}} 
   </div>
+  <div class="card-body ">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class='col-md-4'>Name:</div>
+          <div class='col-md-8'>{{productd.productName}}</div>
+        </div>
+        <div class="row">
+          <div class='col-md-4'>Code:</div>
+          <div class='col-md-8'>{{productd.productCode | lowercase}}</div>
+        </div>
+        <div class="row">
+          <div class='col-md-4'>Description:</div>
+          <div class='col-md-8'>{{productd.description}}</div>
+        </div>
+        <div class='row'>
+            <div class='col-md-4'>Availability:</div>
+            <div class='col-md-8'>{{productd.releaseDate}}</div>
+        </div>
+        <div class='row'>
+            <div class='col-md-4'>Price:</div>
+            <div class='col-md-8'>{{productd.price|currency:'USD':'symbol'}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>5 Star Rating:</div>
+          <pm-star [rating]='productd.starRating'>
+            </pm-star>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <img class='center-block img-responsive'
+          [style.width.px]='200'
+          [style.margin.px]='2'
+          [src]='productd.imageUrl'
+          [title]='productd.productName'>
+      </div>
+    </div>
+  </div>
   <div class="card-footer">
-    <p></p>
     <button class="btn btn-outline-secondary" (click)='goBack()'>Back</button>
   </div>
 </div>

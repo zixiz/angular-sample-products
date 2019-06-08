@@ -8,9 +8,9 @@ import { ServicesService } from '../myservice/services.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  productd: any;
+  productd: IProduct;
   errorMessage:string;
-  pageTitle:string= 'My Product Detail';
+  pageTitle:string= 'Product Detail';
   constructor(private route:ActivatedRoute,private router:Router,private productServics:ServicesService) { }
 
   ngOnInit() {
